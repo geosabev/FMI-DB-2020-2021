@@ -23,7 +23,14 @@ SELECT NAME
 FROM MOVIEEXEC
 WHERE NETWORTH > 10000000;
 
--- 01.5. Напишете заявка, която извежда имената на актьорите, които са мъже или живеят на Prefect Rd.SELECT NAMEFROM MOVIESTARWHERE GENDER = 'm' OR ADDRESS LIKE 'Perfect Rd.';-- 02. За базата от данни PCUSE PC
+-- 01.5. Напишете заявка, която извежда имената на актьорите, които са мъже или живеят на Prefect Rd.
+SELECT NAME
+FROM MOVIESTAR
+WHERE GENDER = 'm' OR ADDRESS LIKE 'Perfect Rd.';
+
+-- 02. За базата от данни PC
+USE PC
+
 -- 02.1. Напишете заявка, която извежда модел, честота и размер на диска за всички персонални компютри с цена под 1200 долара. 
 --		 Задайте псевдоними за атрибутите честота и размер на диска, съответно MHz и GB.
 SELECT MODEL, SPEED AS MHz, HD AS GB
@@ -35,7 +42,36 @@ SELECT DISTINCT MAKER
 FROM PRODUCT
 WHERE TYPE = 'Printer';
 
--- 02.3. Напишете заявка, която извежда модел, размер на паметта, размер на екран за лаптопите, чиято цена е над 1000 долара.SELECT MODEL, RAM, SCREENFROM LAPTOPWHERE PRICE > 1000;-- 02.4. Напишете заявка, която извежда всички цветни принтери.SELECT *FROM PRINTERWHERE COLOR = 'y';-- 02.5. Напишете заявка, която извежда модел, честота и размер на диска за тези персонални компютри със CD 12x или 16x и цена под 2000 долара.SELECT MODEL, SPEED, HDFROM PCWHERE CD IN ('12x', '16x') AND PRICE < 2000;-- 03. За базата от данни SHIPSUSE SHIPS-- 03.1. Напишете заявка, която извежда класа и страната за всички класове с по-малко от 10 оръдия.SELECT CLASS, COUNTRYFROM CLASSESWHERE NUMGUNS < 10;-- 03.2. Напишете заявка, която извежда имената на корабите, пуснати на вода преди 1918. Задайте псевдоним shipName на колоната.SELECT NAME AS SHIPNAMEFROM SHIPSWHERE LAUNCHED < 1918;-- 03.3. Напишете заявка, която извежда имената на корабите, потънали в битка и имената на съответните битки.SELECT SHIP, BATTLE
+-- 02.3. Напишете заявка, която извежда модел, размер на паметта, размер на екран за лаптопите, чиято цена е над 1000 долара.
+SELECT MODEL, RAM, SCREEN
+FROM LAPTOP
+WHERE PRICE > 1000;
+
+-- 02.4. Напишете заявка, която извежда всички цветни принтери.
+SELECT *
+FROM PRINTER
+WHERE COLOR = 'y';
+
+-- 02.5. Напишете заявка, която извежда модел, честота и размер на диска за тези персонални компютри със CD 12x или 16x и цена под 2000 долара.
+SELECT MODEL, SPEED, HD
+FROM PC
+WHERE CD IN ('12x', '16x') AND PRICE < 2000;
+
+-- 03. За базата от данни SHIPS
+USE SHIPS
+
+-- 03.1. Напишете заявка, която извежда класа и страната за всички класове с по-малко от 10 оръдия.
+SELECT CLASS, COUNTRY
+FROM CLASSES
+WHERE NUMGUNS < 10;
+
+-- 03.2. Напишете заявка, която извежда имената на корабите, пуснати на вода преди 1918. Задайте псевдоним shipName на колоната.
+SELECT NAME AS SHIPNAME
+FROM SHIPS
+WHERE LAUNCHED < 1918;
+
+-- 03.3. Напишете заявка, която извежда имената на корабите, потънали в битка и имената на съответните битки.
+SELECT SHIP, BATTLE
 FROM OUTCOMES
 WHERE RESULT = 'sunk';
 
