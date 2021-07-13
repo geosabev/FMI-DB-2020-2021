@@ -1,3 +1,5 @@
+---- 01. Simple Queries ----
+
 -- 01. Movies
 USE MOVIES
 

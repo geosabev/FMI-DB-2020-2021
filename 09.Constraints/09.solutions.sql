@@ -1,10 +1,9 @@
----- детхмхпюме мю нцпюмхвемхъ мю мхбн рюакхжю: гюдювх - 27.04.2021 Ц. ----
+---- 09. Constraints ----
 
--- CREATE DATABASE ex10_Flights
+CREATE DATABASE ex10_Flights
 
 USE ex10_Flights
 
-/*
 CREATE TABLE Airline(
 	code CHAR(2) PRIMARY KEY,
 	name VARCHAR(30),
@@ -60,6 +59,3 @@ CREATE TABLE Airport(
 	country VARCHAR(50),
 	city VARCHAR(50)
 );
-*/
-
-
